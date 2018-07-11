@@ -8,12 +8,17 @@
 分布式版本控制系统
 
 
-Git add 告诉git,把文件添加到仓库
-Git commit -m ""  把文件提交到仓库
+Git add 告诉git,把文件添加到仓库，修改被放入暂存区
+Git commit -m ""  把文件提交到仓库，负责把暂存区的修改提交
 Git status 让我们时刻掌握仓库当前的状态。
 Git diff   查看有什么不同
 Git log 命令显示从最近到最远的提交日志
 Git log --pretty=oneline
+Git reset --hard HEAD^ 版本回退
+Git reset --hard "版本号" 回退到这个版本
+Git reflog 记录你的每一次命令 
+Git diff HEAD  -- "文件"  查看工作区与版本库里最新版本的区别
+Q + 回车 退出查看不同状态
 Git is a distributed version control system.
 Git is free software distributed under the GPL.
 
