@@ -19,6 +19,40 @@ Git reset --hard "版本号" 回退到这个版本
 Git reflog 记录你的每一次命令 
 Git diff HEAD  -- "文件"  查看工作区与版本库里最新版本的区别
 Git checkout -- "file" 清除工作区的修改
+Git reset HEAD "file" 把暂存区的修改撤销掉 与checkout组合使用可以清除暂存区的修改
+ rm "file"  文件管理器（工作区）中删除
+Git rm "file"          1.(commit 后)版本库中删除
+Git checkout -- "file" 2.恢复到最新版本(从版本库中恢复到本地)
+
+远程仓库
+  GIT是分布式控制系统，同一个GIT仓库，可以分不到不同的机器上，怎么分布呢？
+  最早，肯定只有一台机器有一个原始版本库，此后，别的机器可以"克隆"这个原始版本库，
+  而且每台机器的版本库骑士都是一样的，没有主次之分，
+一，创建远程仓库
+  1.创建SSH 
+     $ ssh-keygen -t rsa -C "youremail@example.com"
+  2.登陆GITHUB，account settings - SSH Keys ，点add ssh key，在key文本框里粘贴id_rsa.pnb文件的内容
+
+   push an existing repository from the command line
+
+git remote add origin https://github.com/JianpanBucuo/learnGit-7-12.git
+git push -u origin master
+ 
+ …or create a new repository on the command line 
+   echo "# learnGit-7-12" >> README.md
+	git init
+	git add README.md
+	git commit -m "first commit"
+	git remote add origin https://github.com/JianpanBucuo/learnGit-7-12.git
+	git push -u origin master
+
+  把本地库的内容推送到远程，用 GIT PUSH命令，实际上是把当前分支 master推送到远程，
+  由于远程库是空的，我们第一次推送master分支时，加上了 -u参数 
+  GIT不但会把本地的master分支内容推送到远程新的master分支，
+  还会把本地的master分支和远程的master分支关联起来。
+
+
+
 
 
 Q + 回车 退出查看不同状态
