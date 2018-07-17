@@ -32,21 +32,25 @@
   git branch -d dev  删除dev分支                
  DEV BRANCH
 
- Creating a new branch is quick.
  
-  
-Creating a new branch is quick & simple.
- 
+ 二 解决冲突
+
+    git checkout -b feature1  创建一个新的分支
+                               修改后 git add git commit
+    git checkout master       转换到master分支
+                               修改后 git add git commit
+    git merge feature1        当要合并的时，GIT提示无法快速合并，只能试图把各自的修改合并起来
+                              但这种合并可能会有冲突，git merge后 会提示冲突
+   git status                 查看冲突文件
+
+                               Git用 <<<<  ==== >>>>标记出不同分支的内容，我们修改后保存
+                                git add 
+                                git commit
+    git branch -d feature1    删除分支
+    git log                     查看分支的合并情况
+    git log --graph             命令查看分支合并图
 
 
- 
-
-git checkout -b feature1
-
-
-  
-Creating a new branch is quick AND simple.
- 
 <script type="text/javascript" src="js/script.js"> </script>
 </body>
 </html>
