@@ -58,7 +58,11 @@
   这样，从分支上就可以看出分支信息。
 
 
-  AAAAAAAAAAAAAAA
+  git checkout -b dev      创建并切换dev 
+                           修改 add commit
+  git checkout master      切换回master
+  git merge --no-ff -m "merge with no-ff" dev  合并dev，并禁用FAST forward
+                          因为本次二饼要创建一个新的commit，所以加上-m参数,把commit描述写进去 
 
 
 
