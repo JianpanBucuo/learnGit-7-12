@@ -14,6 +14,22 @@ HEAD严格来说不是指向提交，而是指向master。master才是指向提�
 
 
 Creating a new branch is quick.
+
+
+//
+
+git branch dev   创建新的分支
+git checkout dev  切换到dev分支
+git checkout -b dev  (两个命令加起来)
+
+git add . 
+git commit -m     在dev分支上提交到仓库
+
+git checkout master  切换到master分支
+git merge dev    合并到dev分支上
+git branch -d dev  删除dev分支
+
+
 <script type="text/javascript" src="js/script.js"> </script>
 </body>
 </html>
